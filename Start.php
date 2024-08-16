@@ -1,6 +1,8 @@
 <?php
 
+use Rpg\Ptpdeux\InterfaceMenu\ShowChar;
 use Rpg\Ptpdeux\InterfaceMenu\TerminalMenu;
+use Rpg\Ptpdeux\System\Out;
 
 require "vendor/autoload.php";
 
@@ -31,6 +33,13 @@ $attackMenu = new TerminalMenu("Angriff","hi");
                 });
                 */
         // Untermenüs bzw. Aktionen zu Menüs hinzufügen.
+
+// Char laden:
+$loadChar->addAction(function (){
+    Out::printLn("Gladiator, Mage");
+    echo ShowChar::library();
+    readline("Beliebige Taste drücken, um zurückzukehren...");
+});
 
 $mainMenu->addChild($battleMenu);
 $mainMenu->addchild($character);

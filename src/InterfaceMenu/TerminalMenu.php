@@ -107,10 +107,16 @@ class TerminalMenu
 
             }
 
-                            if($input == 'laden') {
-                                Out::printLn("GLADIATOR   MAGE   ... under construction..");
-                                echo $this->getChar();
-            }
+            /*
+             * TODO: in eine Action überführen, da sonst diese Abfrage in allen Menüs verfügbar ist.
+             * Siehe Start.php, ab Zeile 36
+             *
+             * if($input == 'laden') {
+             *    Out::printLn("GLADIATOR   MAGE   ... under construction..");
+             *    echo $this->getChar();
+             * }
+             *
+             */
 
             if (in_array($input, ['exit', 'bye', 'quit'])) {
                 self::clearView();
@@ -128,11 +134,17 @@ class TerminalMenu
         }
     }
 
-                public function getChar(): string
-                {
-                    $char = 0;
-                    return ShowChar::library();
-                }
+
+    /*
+     * TODO: gehört auch mit in die Action-Methode (Start.php, ab Zeile 36)
+     * public function getChar(): string
+     * {
+     *    $char = 0;
+     *    return ShowChar::library();
+     * }
+     *
+    */
+
     public function getTitle(): string
     {
         return $this->title;
